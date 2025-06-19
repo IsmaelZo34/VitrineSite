@@ -1,0 +1,112 @@
+/* Section Contact */
+.contact-section {
+    padding: 100px 100px;
+    background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
+}
+
+/* Nouveau conteneur pour les deux colonnes */
+.contact-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Colonne des infos personnelles (gauche) */
+.info-section {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Colonne du formulaire (droite) */
+.form-section {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Formulaire */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Champs de texte */
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fdfdfd;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Effet focus */
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+    border-color: #333;
+    box-shadow: 0 0 8px rgba(51, 51, 51, 0.2);
+    outline: none;
+}
+
+/* Champ du message */
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Bouton envoyer */
+.contact-form button {
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+/* Titre */
+.contact-section h1 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 40px;
+}
+
+/* Ligne dans la section info */
+.info-section .line {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #333;
+}
+
+.info-section .regions {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+.perso-img{
+    width: 250px;
+    object-fit:cover;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
