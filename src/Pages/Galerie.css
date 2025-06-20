@@ -48,16 +48,38 @@ body {
     background-color: #f0f0f0;
   }
   .slider-controls{
+    width: 80%;
+    height: 80%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+  .overlay{
+    background-color: rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 80%;
-    height: 80%;
     padding: 5px;
-    margin-bottom: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    height: 98%;
     border-radius: 8px;
+  }
+  .slider-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2px;
+    height: auto;
+    color: #fff;
+  }
+  .slider-title{
+    font-size: 54px;
+    font-weight: bold;
+    font-family: 'Brush Script MT', cursive;
+    margin-bottom: 50px;
+  }
+  .slider-description{
+    font-size: 34px;
+    font-family: 'Brush Script MT', cursive;
   }
   .slider-button{
     padding: 10px 20px;
@@ -72,18 +94,10 @@ body {
   }
   .slider-display{
     width: 80%;
-    height: 10vh;
+    height: 50vh;
     position: relative;
-    overflow: hidden;
-    display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .slider-text{
-    position: absolute;
-    font-size: 54px;
-    font-weight: bold;
-    font-family: 'Brush Script MT', cursive;
   }
   .slider-indicator{
     display: flex;

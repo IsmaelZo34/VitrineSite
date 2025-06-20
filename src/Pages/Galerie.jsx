@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
 import {motion, AnimatePresence} from 'framer-motion';
 import './Galerie.css';
-const events = ['Anniversaires' ,'Mariages', 'Vodiondry', 'Soratra','Baptême'];
-
+const slides = [
+    {event:'Anniversaires',background:'./images/1.jpg',description:'Ceci est un évenement anniversaires' },
+    {event:'Mariages',background:'./images/2.jpg',description:'Ceci est un évenement mariage'},
+    { event:'Vodiondry',background:'./images/03.jpg',description:'Ceci est un évenement vodiondry'},
+    {event:'Soratra',background:'./images/06.jpg',description:'Ceci est un évenement soratra'},
+    {event:'Baptême',background:'./images/12.jpg',description:'Ceci est un évenement baptéme'}
+];
 const Galerie = () => {
     const [index, setIndex] = useState(0);
     const [direction, setDirection] = useState(0);
     const nextEvent = () => {
         setDirection(1);
-        setIndex((prev) => (prev + 1) % events.length);
+        setIndex((prev) => (prev + 1) % slides.length);
     };
     const prevEvent = () =>{
         setDirection(-1);
-        setIndex((prev) => (prev - 1 + events.length) % events.length);
+        setIndex((prev) => (prev - 1 + slides.length) % slides.length);
     };
     const variants = {
         enter: (dir) => ({
@@ -28,14 +33,21 @@ const Galerie = () => {
             opacity: 0,
         }),
     };
+    const current = slides[index];
     return (
     <>
         <div className='slider-container'>
-            <div className='slider-controls'>
+            <div className='slider-controls'
+            style={{
+            backgroundImage: `url(${current.background})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+            }}>
+            <div className='overlay'>
                 <button onClick={prevEvent} className='slider-button'>prev</button>
                 <div className='slider-display'>
                     <AnimatePresence custom={direction} mode='wait'>
-                        <motion.h1
+                        <motion.div
                             key={index}
                             custom={direction}
                             variants={variants}
@@ -43,15 +55,18 @@ const Galerie = () => {
                             animate ="center"
                             exit = "exit"
                             transition={{ duration: 0.4}}
-                            className= 'slider-text'>
-                                {events[index]}
-                        </motion.h1>
+                            className= 'slider-content'>
+                                {current[index]}
+                            <h1 className='slider-title'>{current.event}</h1><br/>
+                            <p className='slider-description'>{current.description}</p>
+                        </motion.div>
                     </AnimatePresence>
                 </div>
                 <button onClick={nextEvent} className='slider-button'>suiv</button>
             </div>
+            </div>
             <div className='slider-indicator'>
-                {events.map((_, i) => (
+                {slides.map((_, i) => (
                     <div key={i} className={`indicator ${i === index ? 'active' : ''}`}></div>
                 ))}
             </div>
