@@ -5,7 +5,7 @@ body {
 }
 
 .navbar {
-    background-color:#163256 ;
+    background-color:#000000 ;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 10px 40px;
     display: flex;
@@ -14,14 +14,34 @@ body {
     flex-direction: row; /* Changer de colonne à ligne */
 }
 
-.logo {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #ccc;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-}
+.text-logo {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .logo-text {
+    text-align: center;
+    margin-right: 20px;
+  }
+  
+  .logo-initials {
+    font-size: 60px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: -4px;
+    line-height: 1;
+  }
+  
+  .logo-name {
+    font-size: 14px;
+    letter-spacing: 6px;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin-top: 5px;
+  }
+  
+
+
 
 .nav-links {
     list-style: none;
