@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './Portfolio.css';
 const gallery = [
     {event: 'marriage', src:'./images/1.jpg'},
@@ -16,15 +16,24 @@ const gallery = [
     {event: 'anniversaire', src:'./images/11.jpg'},
     {event: 'marriage', src:'./images/12.jpg'},
     {event: 'vodiondry', src:'./images/1.jpg'},
+    {event: 'marriage', src:'./images/13.jpg'},
+    {event: 'marriage', src:'./images/13.jpg'},
+    {event: 'marriage', src:'./images/13.jpg'},
+    {event: 'marriage', src:'./images/13.jpg'},
+    {event: 'marriage', src:'./images/13.jpg'},
+    {event: 'marriage', src:'./images/13.jpg'},
+    
 ];
 const Portfolio = () => {
     const [selectedEvent, setSelectedEvent] = useState(null);
     const events = Array.from(new Set(gallery.map((img) => img.event)));
-    const handleClick = (event) => {
+    const handleClick = (event) => { 
         setSelectedEvent(event);
+        document.body.classList.add('carre');
     }
     const handleBack = () => {
         setSelectedEvent(null);
+        document.body.classList.remove('carre');
     }
     const imagesToShow = selectedEvent ? gallery.filter((img) => img.event === selectedEvent) : events.map((event) => {
         const firstImage = gallery.find((img) => img.event === event);
@@ -32,7 +41,10 @@ const Portfolio = () => {
     })
     return (
         <div className="portfolio-page">
-            <h1>Galerie</h1>
+            {selectedEvent 
+                ? <h1>{selectedEvent}</h1>
+                : <h1>Galerie</h1>
+            }
             {selectedEvent &&(
                 <button onClick={handleBack} className='back-button'>Retour</button>
             )}
@@ -40,7 +52,7 @@ const Portfolio = () => {
                 {imagesToShow.map((img, index) =>(
                     <div key={index} className="gallery-item" onClick={() => !selectedEvent && handleClick(img.event)}>
                         <img src={img.src} alt={img.event} />
-                        <div className="overlay-text">{img.event}</div>
+                        <div className="overlay-text" >{img.event}</div>
                         {!selectedEvent && <p>{img.event}</p>}
                     </div>
                 ))}

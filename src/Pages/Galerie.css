@@ -19,26 +19,7 @@ body {
     color: #666;
   }
   
-  .gallery {
-    column-count: 3;
-    column-gap: 20px;
-    padding: 0 20px;
-  }
-  
-  .gallery img {
-    width: 100%;
-    max-height: 300px; /* ✅ Limite la hauteur des images */
-    object-fit: cover; /* ✅ Garde une belle coupe centrée */
-    margin-bottom: 20px;
-    border-radius: 5px;
-    break-inside: avoid;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-  }
-  
-  .gallery img:hover {
-    transform: scale(1.03);
-  }
+
   .slider-container{
     display: flex;
     flex-direction: column;
